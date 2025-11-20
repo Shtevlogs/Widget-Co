@@ -1,3 +1,13 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
+
+# large files
+.mp3
+.ogg
+.wav
+.png
+.jpg
+.jpeg
+.gif
+.mp4
