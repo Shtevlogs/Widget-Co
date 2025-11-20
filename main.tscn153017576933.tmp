@@ -1,0 +1,68 @@
+[gd_scene load_steps=5 format=3 uid="uid://bpogw1dc4734h"]
+
+[ext_resource type="PackedScene" uid="uid://dgeog2quel01l" path="res://prefabs/display/mineable_display.tscn" id="1_0xm2m"]
+[ext_resource type="Script" uid="uid://cka3tppq753jh" path="res://src/display/money_display.gd" id="1_1bvp3"]
+[ext_resource type="Script" uid="uid://c2ul75jufdt78" path="res://src/monies_tick.gd" id="4_1bvp3"]
+[ext_resource type="Script" uid="uid://bpmu1ljo4hyu8" path="res://src/game.gd" id="5_lquwl"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 100.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="MoneyDisplay" type="Control" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+script = ExtResource("1_1bvp3")
+
+[node name="Total" type="Label" parent="MarginContainer/HBoxContainer/MoneyDisplay"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.0
+offset_top = -11.5
+offset_right = 23.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "$1000.00"
+
+[node name="MineableDisplay" parent="MarginContainer/HBoxContainer" instance=ExtResource("1_0xm2m")]
+layout_mode = 2
+
+[node name="MineableDisplay2" parent="MarginContainer/HBoxContainer" instance=ExtResource("1_0xm2m")]
+layout_mode = 2
+
+[node name="MineableDisplay3" parent="MarginContainer/HBoxContainer" instance=ExtResource("1_0xm2m")]
+layout_mode = 2
+
+[node name="Game" type="Node" parent="."]
+script = ExtResource("5_lquwl")
+
+[node name="MoniesTick" type="Node" parent="."]
+script = ExtResource("4_1bvp3")
+
+[node name="Timer" type="Timer" parent="MoniesTick"]
+autostart = true
+
+[connection signal="timeout" from="MoniesTick/Timer" to="MoniesTick" method="_on_timer_timeout"]

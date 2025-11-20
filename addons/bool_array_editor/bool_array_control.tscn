@@ -1,0 +1,317 @@
+[gd_scene format=3 uid="uid://dg3s8aba0qrrr"]
+
+[node name="BoolArrayControl" type="Control"]
+custom_minimum_size = Vector2(240, 263)
+layout_mode = 3
+anchors_preset = 0
+offset_bottom = 100.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="HFlowContainer" type="HFlowContainer" parent="."]
+custom_minimum_size = Vector2(240, 240)
+layout_mode = 0
+offset_right = 240.0
+offset_bottom = 240.0
+theme_override_constants/h_separation = -6
+theme_override_constants/v_separation = -6
+
+[node name="CheckBox" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox2" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox3" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox4" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox5" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox6" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox7" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox8" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox9" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox10" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox11" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox12" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox13" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox14" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox15" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox16" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox17" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox18" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox19" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox20" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox21" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox22" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox23" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox24" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox25" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox26" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox27" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox28" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox29" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox30" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox31" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox32" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox33" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox34" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox35" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox36" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox37" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox38" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox39" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox40" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox41" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox42" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox43" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox44" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox45" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox46" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox47" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox48" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox49" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox50" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox51" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox52" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox53" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox54" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox55" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox56" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox57" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox58" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox59" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox60" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox61" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox62" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox63" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox64" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox65" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox66" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox67" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox68" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox69" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox70" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox71" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox72" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox73" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox74" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox75" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox76" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox77" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox78" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox79" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox80" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox81" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox82" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox83" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox84" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox85" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox86" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox87" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox88" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox89" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox90" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox91" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox92" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox93" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox94" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox95" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox96" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox97" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox98" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox99" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2
+
+[node name="CheckBox100" type="CheckBox" parent="HFlowContainer"]
+layout_mode = 2

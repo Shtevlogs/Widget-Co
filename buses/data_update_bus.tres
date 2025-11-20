@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="DataUpdateBus" load_steps=2 format=3 uid="uid://fqqk6etp0pv8"]
+
+[ext_resource type="Script" uid="uid://yjd3rv72iylb" path="res://buses/data_update_bus.gd" id="1_4v8pt"]
+
+[resource]
+script = ExtResource("1_4v8pt")
+metadata/_custom_type_script = "uid://yjd3rv72iylb"

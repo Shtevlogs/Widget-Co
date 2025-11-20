@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Mineable" load_steps=3 format=3 uid="uid://bnt02aamem8fg"]
+
+[ext_resource type="Script" uid="uid://c5acgqypcql68" path="res://data/models/mineable.gd" id="1_c851t"]
+[ext_resource type="Resource" uid="uid://dk6v71aqysral" path="res://data/resources/elements/0.tres" id="1_ne077"]
+
+[resource]
+script = ExtResource("1_c851t")
+element = ExtResource("1_ne077")
+pattern = Array[bool]([true, false, false, false, false, false, false, false, false, false, true, true, true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false])
+metadata/_custom_type_script = "uid://c5acgqypcql68"

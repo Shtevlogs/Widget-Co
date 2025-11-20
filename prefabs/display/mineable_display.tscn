@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=3 uid="uid://dgeog2quel01l"]
+
+[ext_resource type="Script" uid="uid://dbg15orl45fjd" path="res://src/display/mineable_display.gd" id="1_3u46p"]
+[ext_resource type="Shader" uid="uid://brm7wj40rcbca" path="res://shaders/widget.gdshader" id="3_a5h8s"]
+[ext_resource type="Texture2D" uid="uid://1lnbaj16pa1k" path="res://sprites/Highlight.png" id="4_d3fay"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lquwl"]
+shader = ExtResource("3_a5h8s")
+shader_parameter/BLOCK_COLORS = PackedColorArray(0, 0, 0, 1, 1, 0.31, 0.31, 1, 1, 0.747, 0.31, 1, 0.908, 1, 0.31, 1, 0.4595, 1, 0.31, 1, 0.31, 1, 0.80450004, 1, 0.31, 0.333, 1, 1, 0.81599987, 0.31, 1, 1, 1, 0.66999996, 0.9065, 1)
+shader_parameter/face_center = Vector2(0.5, 0.5)
+shader_parameter/face_radius = 0.5
+shader_parameter/blocks = PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+
+[node name="MineableDisplay" type="Control"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_3u46p")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -30.0
+offset_right = 30.0
+offset_bottom = 60.0
+grow_horizontal = 2
+
+[node name="Control" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Control"]
+material = SubResource("ShaderMaterial_lquwl")
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 0
+offset_right = 60.0
+offset_bottom = 60.0
+texture = ExtResource("4_d3fay")
+expand_mode = 5
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "1/m"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+text = "Upgrade
+($100)"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
