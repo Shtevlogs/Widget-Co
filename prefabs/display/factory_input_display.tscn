@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=3 uid="uid://8lpxwb26b5y4"]
+
+[ext_resource type="Script" uid="uid://vbda2uah56s6" path="res://src/display/factory_input_display.gd" id="1_oubao"]
+[ext_resource type="PackedScene" uid="uid://ds3276snotx7m" path="res://prefabs/display/widget_rect_display.tscn" id="2_oubao"]
+
+[node name="FactoryInputDisplay" type="Control"]
+custom_minimum_size = Vector2(90, 130)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_oubao")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_default_cursor_shape = 2
+
+[node name="WidgetRectDisplay" parent="VBoxContainer/Button" instance=ExtResource("2_oubao")]
+layout_mode = 1
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]

@@ -1,8 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://bpogw1dc4734h"]
+[gd_scene load_steps=8 format=3 uid="uid://bpogw1dc4734h"]
 
 [ext_resource type="PackedScene" uid="uid://dgeog2quel01l" path="res://prefabs/display/mineable_display.tscn" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://cka3tppq753jh" path="res://src/display/money_display.gd" id="1_1bvp3"]
+[ext_resource type="Script" uid="uid://ct0dx24oafnud" path="res://src/display/factory_display.gd" id="3_lquwl"]
 [ext_resource type="Script" uid="uid://c2ul75jufdt78" path="res://src/monies_tick.gd" id="4_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://1lnbaj16pa1k" path="res://sprites/Highlight.png" id="4_7mycd"]
+[ext_resource type="Script" uid="uid://bg65tn6r60ssm" path="res://src/factory_screen.gd" id="5_272bh"]
 [ext_resource type="Script" uid="uid://bpmu1ljo4hyu8" path="res://src/game.gd" id="5_lquwl"]
 
 [node name="Main" type="Control"]
@@ -15,10 +18,11 @@ grow_vertical = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
-anchors_preset = 10
+anchors_preset = 15
 anchor_right = 1.0
-offset_bottom = 100.0
+anchor_bottom = 1.0
 grow_horizontal = 2
+grow_vertical = 2
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
@@ -26,10 +30,12 @@ theme_override_constants/margin_bottom = 5
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
+size_flags_vertical = 0
 
 [node name="MoneyDisplay" type="Control" parent="MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
+size_flags_vertical = 0
 script = ExtResource("1_1bvp3")
 
 [node name="Total" type="Label" parent="MarginContainer/HBoxContainer/MoneyDisplay"]
@@ -56,6 +62,185 @@ layout_mode = 2
 [node name="MineableDisplay3" parent="MarginContainer/HBoxContainer" instance=ExtResource("1_0xm2m")]
 layout_mode = 2
 
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer"]
+layout_direction = 3
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="FactoryDisplay" type="Control" parent="MarginContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(250, 120)
+layout_mode = 2
+script = ExtResource("3_lquwl")
+
+[node name="UpgradeButton" type="Button" parent="MarginContainer/HBoxContainer2/FactoryDisplay"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -37.5
+offset_top = -54.0
+offset_right = 37.5
+grow_horizontal = 2
+mouse_default_cursor_shape = 2
+text = "Upgrade
+($100)"
+
+[node name="Button" type="Button" parent="MarginContainer/HBoxContainer2/FactoryDisplay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+flat = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer2/FactoryDisplay/Button"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -308.0
+grow_horizontal = 0
+grow_vertical = 0
+alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer2/FactoryDisplay/Button/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("4_7mycd")
+expand_mode = 3
+
+[node name="TextureRect2" type="TextureRect" parent="MarginContainer/HBoxContainer2/FactoryDisplay/Button/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("4_7mycd")
+expand_mode = 3
+
+[node name="TextureRect3" type="TextureRect" parent="MarginContainer/HBoxContainer2/FactoryDisplay/Button/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("4_7mycd")
+expand_mode = 3
+
+[node name="TextureRect4" type="TextureRect" parent="MarginContainer/HBoxContainer2/FactoryDisplay/Button/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("4_7mycd")
+expand_mode = 3
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer2/FactoryDisplay/Button"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -412.0
+offset_right = 100.0
+grow_vertical = 0
+alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer2/FactoryDisplay/Button/VBoxContainer2"]
+visible = false
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("4_7mycd")
+expand_mode = 3
+
+[node name="TextureRect2" type="TextureRect" parent="MarginContainer/HBoxContainer2/FactoryDisplay/Button/VBoxContainer2"]
+visible = false
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("4_7mycd")
+expand_mode = 3
+
+[node name="TextureRect3" type="TextureRect" parent="MarginContainer/HBoxContainer2/FactoryDisplay/Button/VBoxContainer2"]
+visible = false
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("4_7mycd")
+expand_mode = 3
+
+[node name="TextureRect4" type="TextureRect" parent="MarginContainer/HBoxContainer2/FactoryDisplay/Button/VBoxContainer2"]
+visible = false
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("4_7mycd")
+expand_mode = 3
+
+[node name="FactoryScreen" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_272bh")
+
+[node name="HSplitContainer" type="HSplitContainer" parent="FactoryScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+split_offset = 110
+dragging_enabled = false
+
+[node name="Data" type="Control" parent="FactoryScreen/HSplitContainer"]
+layout_mode = 2
+
+[node name="Contents" type="ScrollContainer" parent="FactoryScreen/HSplitContainer/Data"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.1
+anchor_right = 0.95
+anchor_bottom = 0.95
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="FactoryScreen/HSplitContainer/Data/Contents"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="FactoryScreen/HSplitContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="FactoryScreen/HSplitContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 100
+
+[node name="HBoxContainer" type="HBoxContainer" parent="FactoryScreen/HSplitContainer/ScrollContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 34
+
+[node name="X" type="Button" parent="FactoryScreen"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -52.0
+offset_top = 25.0
+offset_right = -25.0
+offset_bottom = 56.0
+grow_horizontal = 0
+mouse_default_cursor_shape = 2
+text = " X "
+
 [node name="Game" type="Node" parent="."]
 script = ExtResource("5_lquwl")
 
@@ -65,4 +250,6 @@ script = ExtResource("4_1bvp3")
 [node name="Timer" type="Timer" parent="MoniesTick"]
 autostart = true
 
+[connection signal="pressed" from="MarginContainer/HBoxContainer2/FactoryDisplay/Button" to="MarginContainer/HBoxContainer2/FactoryDisplay" method="_on_button_pressed"]
+[connection signal="pressed" from="FactoryScreen/X" to="FactoryScreen" method="_on_x_pressed"]
 [connection signal="timeout" from="MoniesTick/Timer" to="MoniesTick" method="_on_timer_timeout"]

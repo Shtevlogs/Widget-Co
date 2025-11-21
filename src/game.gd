@@ -15,6 +15,8 @@ const _element_2 : Element = preload("uid://dak4ln80qdwl0")
 @onready var mineable_display_2: MineableDisplay = $"../MarginContainer/HBoxContainer/MineableDisplay2"
 @onready var mineable_display_3: MineableDisplay = $"../MarginContainer/HBoxContainer/MineableDisplay3"
 
+@onready var factory_display: FactoryDisplay = $"../MarginContainer/HBoxContainer2/FactoryDisplay"
+
 func _ready() -> void:
     save_data = SaveData.new()
     
@@ -29,15 +31,32 @@ func _ready() -> void:
     mine.id = 0
     save_data.mines.append(mine)
     mineable_display.assign(mine.id)
+    var widget := Widget.new()
+    widget.blocks = mine.mineable.to_blocks()
+    save_data.widgets.append(widget)
     
     mine = Mine.new()
     mine.mineable = _1
     mine.id = 1
     save_data.mines.append(mine)
     mineable_display_2.assign(mine.id)
+    widget = Widget.new()
+    widget.blocks = mine.mineable.to_blocks()
+    save_data.widgets.append(widget)
     
     mine = Mine.new()
     mine.mineable = _2
     mine.id = 2
     save_data.mines.append(mine)
     mineable_display_3.assign(mine.id)
+    widget = Widget.new()
+    widget.blocks = mine.mineable.to_blocks()
+    save_data.widgets.append(widget)
+
+    var factory := Factory.new()
+    save_data.factories.append(factory)
+    factory_display.factory_id = 0
+    factory.stages = [
+        Stage.new(),
+        Stage.new()
+    ]

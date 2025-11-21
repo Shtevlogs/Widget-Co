@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://ds3276snotx7m"]
+
+[ext_resource type="Material" uid="uid://d3fm5hm8yy5ut" path="res://materials/widget_material.tres" id="1_43via"]
+[ext_resource type="Texture2D" uid="uid://1lnbaj16pa1k" path="res://sprites/Highlight.png" id="1_wmp1q"]
+[ext_resource type="Script" uid="uid://6uqggfibbjbr" path="res://src/display/widget_rect_display.gd" id="2_43via"]
+
+[node name="WidgetRectDisplay" type="TextureRect"]
+material = ExtResource("1_43via")
+custom_minimum_size = Vector2(100, 100)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_wmp1q")
+expand_mode = 3
+script = ExtResource("2_43via")

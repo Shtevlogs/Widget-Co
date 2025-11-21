@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cfr4y7cmrmagj"]
+
+[node name="AddStage" type="Button"]
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_default_cursor_shape = 2
+text = "Add Stage"

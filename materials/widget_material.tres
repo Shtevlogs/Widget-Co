@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://d3fm5hm8yy5ut"]
+
+[ext_resource type="Shader" uid="uid://brm7wj40rcbca" path="res://shaders/widget.gdshader" id="1_qqofy"]
+
+[resource]
+shader = ExtResource("1_qqofy")
+shader_parameter/BLOCK_COLORS = PackedColorArray(0, 0, 0, 1, 1, 0.31, 0.31, 1, 1, 0.747, 0.31, 1, 0.908, 1, 0.31, 1, 0.4595, 1, 0.31, 1, 0.31, 1, 0.80450004, 1, 0.31, 0.333, 1, 1, 0.81599987, 0.31, 1, 1, 1, 0.66999996, 0.9065, 1)
+shader_parameter/face_center = Vector2(0.5, 0.5)
+shader_parameter/face_radius = 0.5
+shader_parameter/blocks = PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
