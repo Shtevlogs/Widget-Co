@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://b1yvkjvtifudt"]
+
+[ext_resource type="Shader" uid="uid://cyyipcnhms33m" path="res://shaders/widget_group.gdshader" id="1_l806u"]
+
+[resource]
+shader = ExtResource("1_l806u")
+shader_parameter/BORDER_COLORS = PackedColorArray(0, 0, 0, 0, 1, 0.65, 0.85416657, 1, 0.84400004, 0.74, 1, 1, 0.65999997, 1, 0.6883333, 1, 1, 0.79, 0.65, 1, 0.68, 1, 0.8773334, 1, 1, 0.62, 0.62, 1, 0.68, 0.776, 1, 1, 0.9371667, 1, 0.71000004, 1)
+shader_parameter/blocks = PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/outline_width = 0.1

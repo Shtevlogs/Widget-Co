@@ -58,6 +58,7 @@ func assign(factory_id: int) -> void:
             
 func _flow_stages() -> void:
     var working_widget := Widget.new()
+    var working_groups : Array[int]
     
     for i in 20:
         for j in 20:
@@ -66,15 +67,24 @@ func _flow_stages() -> void:
             var input_widget_idx := -1 if active_factory.inputs.size() <= quadrant_idx else quadrant_idx
             if input_widget_idx == -1:
                 working_widget.blocks.append(-1)
+                working_groups.append(0)
             else:
                 var input_widget := active_factory.inputs[input_widget_idx]
                 var sub_widget_idx := (i % 10) * 10 + (j % 10)
-                working_widget.blocks.append(input_widget.blocks[sub_widget_idx])
+                var input_element := input_widget.blocks[sub_widget_idx]
+                working_widget.blocks.append(input_element)
+                if input_element == -1:
+                    working_groups.append(0)
+                else:
+                    working_groups.append(quadrant_idx + 1)
     
     for i in 50:
         if active_factory.stages.size() > i:
             factory_stage_display_pool[i].visible = true
-            factory_stage_display_pool[i].assign(working_widget, active_factory.stages[i])
+            var working_stage := active_factory.stages[i]
+            working_stage.widget_groups = working_groups.duplicate()
+            factory_stage_display_pool[i].assign(working_widget, working_stage)
+            working_widget = factory_stage_display_pool[i].get_result_widget(working_widget)
         else:
             factory_stage_display_pool[i].visible = false
 

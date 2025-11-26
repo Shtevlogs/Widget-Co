@@ -220,9 +220,7 @@ layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 3
 theme_override_constants/margin_left = 100
-theme_override_constants/margin_top = 100
 theme_override_constants/margin_right = 100
-theme_override_constants/margin_bottom = 100
 
 [node name="HBoxContainer" type="HBoxContainer" parent="FactoryScreen/HSplitContainer/ScrollContainer/MarginContainer"]
 layout_mode = 2
