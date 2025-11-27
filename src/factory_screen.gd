@@ -3,6 +3,8 @@ extends Panel
 
 static var _i : FactoryScreen
 
+const STAGE_ACTION_BUS : StageActionBus = preload("uid://b1226272pebie")
+
 const FACTORY_INPUT_DISPLAY := preload("uid://8lpxwb26b5y4")
 const FACTORY_STAGE_DISPLAY = preload("uid://dujc424ijvxk7")
 const WIDGET_RECT_DISPLAY = preload("uid://ds3276snotx7m")
@@ -39,6 +41,8 @@ func _ready() -> void:
     
     factory_result_display = WIDGET_RECT_DISPLAY.instantiate() as WidgetRectDisplay
     stages_container.add_child(factory_result_display)
+    
+    STAGE_ACTION_BUS.on_stage_edit_end.connect(_flow_stages)
     
 
 static func open(factory_id : int) -> void:
@@ -82,9 +86,15 @@ func _flow_stages() -> void:
         if active_factory.stages.size() > i:
             factory_stage_display_pool[i].visible = true
             var working_stage := active_factory.stages[i]
-            working_stage.widget_groups = working_groups.duplicate()
+            working_stage.widget_groups = working_groups
             factory_stage_display_pool[i].assign(working_widget, working_stage)
-            working_widget = factory_stage_display_pool[i].get_result_widget(working_widget)
+            var stage_handler := factory_stage_display_pool[i].stage_handler
+            if stage_handler.can_act():
+                working_groups = working_groups.duplicate()
+                var wwg := stage_handler.get_result_widget(working_widget,working_groups)
+                working_widget = wwg.widget
+            else:
+                stage_handler.unhighlight_all(_StageHandler.CANCEL)
         else:
             factory_stage_display_pool[i].visible = false
 

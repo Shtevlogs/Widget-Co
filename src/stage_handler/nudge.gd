@@ -1,17 +1,33 @@
 class_name Nudge
 extends _StageHandler
 
-var selected_widget_group_points: Array[Vector2i]
-
-func get_result_widget(widget: Widget) -> Widget:
+func get_result_widget(widget: Widget, groups: Array[int]) -> _StageHandler.WidgetWithGroups:
     var result_widget := widget.duplicate(true)
+    var wwg := _StageHandler.WidgetWithGroups.new(result_widget, groups)
     
-    return result_widget
+    var location_a_idx := pos_to_idx(stage.location_a)
+    var widget_group := stage.widget_groups[location_a_idx]
+    var location_a_parts := get_widget_group_points(widget_group)
+    var location_b_parts := _create_move_points(stage.location_b, location_a_parts)
+    
+    shift_widget(wwg, location_a_parts, location_b_parts)
+    
+    return wwg
+
+func can_act() -> bool:
+    if !stage.has_location_a || !stage.has_location_b :
+        return false
+        
+    var location_a_idx := pos_to_idx(stage.location_a)
+    var widget_group := stage.widget_groups[location_a_idx]
+    var location_a_parts := get_widget_group_points(widget_group)
+    var location_b_parts := _create_move_points(stage.location_b, location_a_parts)
+    
+    return _can_nudge(location_a_parts, location_b_parts)
 
 func on_begin_edit() -> void:
     super.on_begin_edit()
-    selected_widget_group_points.clear()
-
+    
 func on_click(pos_i: Vector2i) -> void:
     var idx := pos_i.x + pos_i.y * 20
     if !stage.has_location_a:
@@ -21,9 +37,11 @@ func on_click(pos_i: Vector2i) -> void:
         set_highlight_by_widget_group(widget_group, PRIMARY)
         stage.has_location_a = true
         stage.location_a = pos_i
-        selected_widget_group_points = get_widget_group_points(widget_group)
     elif !stage.has_location_b:
-        var move_points := _create_move_points(pos_i)
+        var location_a_idx := pos_to_idx(stage.location_a)
+        var widget_group := stage.widget_groups[location_a_idx]
+        var location_a_parts := get_widget_group_points(widget_group)
+        var move_points := _create_move_points(pos_i, location_a_parts)
         set_highlight_by_points(move_points, SECONDARY)
         stage.has_location_b = true
         stage.location_b = pos_i
@@ -31,6 +49,7 @@ func on_click(pos_i: Vector2i) -> void:
 
 func on_hover(pos_i : Vector2i) -> void:
     unhighlight_all()
+    unhighlight_specific(CANCEL)
     
     var idx := pos_i.x + pos_i.y * 20
     if !stage.has_location_a:
@@ -41,10 +60,25 @@ func on_hover(pos_i : Vector2i) -> void:
             if stage.highlight_blocks[idx] == NONE:
                 stage.highlight_blocks[idx] = HOVER
     elif !stage.has_location_b:
-        var move_points := _create_move_points(pos_i)
-        set_highlight_by_points(move_points)
+        var location_a_idx := pos_to_idx(stage.location_a)
+        var widget_group := stage.widget_groups[location_a_idx]
+        var location_a_parts := get_widget_group_points(widget_group)
+        var move_points := _create_move_points(pos_i, location_a_parts)
+        var can_nudge := _can_nudge(location_a_parts, move_points)
+        set_highlight_by_points(move_points, HOVER if can_nudge else CANCEL)
 
-func _create_move_points(pos_i: Vector2i) -> Array[Vector2i]:
+func _can_nudge(location_a_parts: Array[Vector2i], location_b_parts: Array[Vector2i] ) -> bool:
+    for point : Vector2i in location_b_parts:
+        if location_a_parts.any(func(p: Vector2i) -> bool: return p == point):
+            continue
+        var idx := pos_to_idx(point)
+        
+        if idx >= 0 && stage.widget_groups[idx] != NONE:
+            return false
+        
+    return true
+
+func _create_move_points(pos_i: Vector2i, selected_widget_group_points: Array[Vector2i]) -> Array[Vector2i]:
         var selected_center := get_points_center(selected_widget_group_points)
         var diff = Vector2(pos_i) - selected_center
         var highlight_offset := Vector2i.ZERO

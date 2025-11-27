@@ -16,7 +16,8 @@
 - (C) v0 extensible stage action system
 - (C) v0 widget group layer
 - (C) v0 nudge stage
-- (D) v0 stage propigation
+- (C) v0 stage propigation
+- (D) v0 save game
 - (T) v0 slice stage
 - (T) v0 glue stage
 - (-) v0 widget output display
@@ -30,7 +31,6 @@
 - (-) v0 opponent company production generation logic
 - (-) v0 tech tree ui
 - (-) v0 tech tree progression logic
-- (-) v0 save game
 - (-) v0.1 factory display pass (bigger stages)
 - (-) alpha test tech tree
 - (-) alpha test cleanup

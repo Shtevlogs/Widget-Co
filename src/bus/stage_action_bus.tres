@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="StageActionBus" load_steps=2 format=3 uid="uid://b1226272pebie"]
+
+[ext_resource type="Script" uid="uid://yio5pndys4iw" path="res://src/bus/stage_action_bus.gd" id="1_i8u8j"]
+
+[resource]
+script = ExtResource("1_i8u8j")
+metadata/_custom_type_script = "uid://yio5pndys4iw"

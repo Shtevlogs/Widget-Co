@@ -5,11 +5,6 @@
 > \- \#\#\# Feature
 > \- Task
 
-- ### v0 slice stage
-- highlight selected edge on hover
-- highlight selected 1 and selected 2 on click
-- detect and show bad slices
-
 - ### v0 glue stage
 - highlight selection on hover
 - switch to selected color on click

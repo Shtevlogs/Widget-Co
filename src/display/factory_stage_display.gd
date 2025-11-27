@@ -33,9 +33,6 @@ func _on_stage_info_click(point: Vector2) -> void:
 func _on_stage_info_hover(point: Vector2) -> void:
     stage_handler.hover(point)
 
-func get_result_widget(widget: Widget) -> Widget:
-    return stage_handler.get_result_widget(widget)
-
 func _on_edit_pressed() -> void:
     on_edit.emit(stage)
     stage.is_editing = true

@@ -17,9 +17,7 @@ func assign(id: int) -> void:
 
 func _update_ui() -> void:
     var blocks := _get_blocks()
-    var center := WidgetUtils.get_center(blocks)
     texture_rect.material.set_shader_parameter("blocks", blocks)
-    texture_rect.position = Vector2.ONE * 50 - center * 5 - Vector2.ONE * 5
     label.text = "%d/m" % mine.get_rate()
     button.text = "Upgrade\n($%0.2f)" % mine.get_upgrade_cost()
         
