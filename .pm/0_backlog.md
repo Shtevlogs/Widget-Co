@@ -18,12 +18,14 @@
 - (C) v0 nudge stage
 - (C) v0 stage propigation
 - (C) v0 save game
-- (D) v0 glue stage
-- (-) v0 slice stage
-- (-) v0 widget output display
-- (-) v0 factory production rate
-- (-) v0 purchasable factories
-- (-) v0 supply flow and excess sales
+- (C) v0 glue stage
+- (D) v0 slice stage
+- (T) v0 widget output display
+- (T) v0 factory production rate
+- (T) v0 purchasable factories
+- (-) v0 excess sales from factories
+- (-) v0 supply flow
+- (-) v0 excess sales from mines
 - (-) v0 basic demands
 - (-) v0 demand display
 - (-) v0 demand sales and decay

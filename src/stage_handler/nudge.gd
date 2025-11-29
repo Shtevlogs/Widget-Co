@@ -25,9 +25,6 @@ func can_act() -> bool:
     
     return _can_nudge(location_a_parts, location_b_parts)
 
-func on_begin_edit() -> void:
-    super.on_begin_edit()
-    
 func on_click(pos_i: Vector2i) -> void:
     var idx := pos_i.x + pos_i.y * 20
     if !stage.has_location_a:
@@ -53,6 +50,7 @@ func on_hover(pos_i : Vector2i) -> void:
     
     var idx := pos_i.x + pos_i.y * 20
     if !stage.has_location_a:
+        #TODO: convert me into shared function hover_widget_group
         var widget_group := stage.widget_groups[idx]
         if widget_group != NONE:
             set_highlight_by_widget_group(widget_group, HOVER)

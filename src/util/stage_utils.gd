@@ -1,7 +1,9 @@
 class_name StageUtils
 
 static var _stage_handlers : Array[GDScript] = [
-    Nudge
+    Nudge,
+    Glue, #TODO: Replace with slice
+    Glue
 ]
 
 static func get_stage_handler(stage_action: Enums.StageAction) -> _StageHandler:
