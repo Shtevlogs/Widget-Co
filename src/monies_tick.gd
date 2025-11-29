@@ -14,6 +14,7 @@ func _on_timer_timeout() -> void:
         current_monies += mine.get_rate() * SEC * blocks_scrap_value(mine.mineable.to_blocks())
     
     DATA_UPDATE_BUS.monies_updated.emit(current_monies)
+    DATA_UPDATE_BUS.persist_save.emit()
 
 func blocks_scrap_value(blocks: Array[int]) -> float:
     var elements := Game.save_data.elements

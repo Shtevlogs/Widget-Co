@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bpogw1dc4734h"]
+[gd_scene load_steps=10 format=3 uid="uid://bpogw1dc4734h"]
 
 [ext_resource type="PackedScene" uid="uid://dgeog2quel01l" path="res://prefabs/display/mineable_display.tscn" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://cka3tppq753jh" path="res://src/display/money_display.gd" id="1_1bvp3"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://1lnbaj16pa1k" path="res://sprites/Highlight.png" id="4_7mycd"]
 [ext_resource type="Script" uid="uid://bg65tn6r60ssm" path="res://src/factory_screen.gd" id="5_272bh"]
 [ext_resource type="Script" uid="uid://bpmu1ljo4hyu8" path="res://src/game.gd" id="5_lquwl"]
+[ext_resource type="Script" uid="uid://6fqwcyykubtc" path="res://src/save_load_manager.gd" id="8_5vw27"]
+[ext_resource type="Script" uid="uid://cd8v8kmrd2pek" path="res://log_container.gd" id="9_kek77"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -214,6 +216,7 @@ size_flags_vertical = 0
 
 [node name="ScrollContainer" type="ScrollContainer" parent="FactoryScreen/HSplitContainer"]
 layout_mode = 2
+follow_focus = true
 
 [node name="MarginContainer" type="MarginContainer" parent="FactoryScreen/HSplitContainer/ScrollContainer"]
 layout_mode = 2
@@ -247,6 +250,19 @@ script = ExtResource("4_1bvp3")
 
 [node name="Timer" type="Timer" parent="MoniesTick"]
 autostart = true
+
+[node name="SaveLoadManager" type="Node" parent="."]
+script = ExtResource("8_5vw27")
+
+[node name="LogContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("9_kek77")
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer2/FactoryDisplay/Button" to="MarginContainer/HBoxContainer2/FactoryDisplay" method="_on_button_pressed"]
 [connection signal="pressed" from="FactoryScreen/X" to="FactoryScreen" method="_on_x_pressed"]

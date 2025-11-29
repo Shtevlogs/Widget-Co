@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="LogBus" load_steps=2 format=3 uid="uid://cjmm2v4ioa0li"]
+
+[ext_resource type="Script" uid="uid://ljwd1k0slwxl" path="res://buses/log_bus.gd" id="1_d4k2i"]
+
+[resource]
+script = ExtResource("1_d4k2i")
+metadata/_custom_type_script = "uid://ljwd1k0slwxl"

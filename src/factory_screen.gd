@@ -4,6 +4,7 @@ extends Panel
 static var _i : FactoryScreen
 
 const STAGE_ACTION_BUS : StageActionBus = preload("uid://b1226272pebie")
+const DATA_UPDATE_BUS : DataUpdateBus = preload("uid://fqqk6etp0pv8")
 
 const FACTORY_INPUT_DISPLAY := preload("uid://8lpxwb26b5y4")
 const FACTORY_STAGE_DISPLAY = preload("uid://dujc424ijvxk7")
@@ -12,6 +13,7 @@ const ADD_STAGE_BUTTON = preload("uid://cfr4y7cmrmagj")
 
 @onready var input_container: VBoxContainer = $HSplitContainer/Data/Contents/VBoxContainer
 @onready var stages_container: HBoxContainer = $HSplitContainer/ScrollContainer/MarginContainer/HBoxContainer
+@onready var scroll_container: ScrollContainer = $HSplitContainer/ScrollContainer
 
 var factory_input_display_pool : Array[FactoryInputDisplay] = []
 var factory_stage_display_pool : Array[FactoryStageDisplay] = []
@@ -43,7 +45,8 @@ func _ready() -> void:
     stages_container.add_child(factory_result_display)
     
     STAGE_ACTION_BUS.on_stage_edit_end.connect(_flow_stages)
-    
+    # no guarantee we'll still have factory_id in the new data
+    DATA_UPDATE_BUS.game_loaded.connect(_on_x_pressed)
 
 static func open(factory_id : int) -> void:
     _i.visible = true
@@ -105,6 +108,9 @@ func _on_add_stage() -> void:
     var to_add := Stage.new()
     active_factory.stages.append(to_add)
     _flow_stages()
+    #jank warning, look out for jank, TODO extend scroll container
+    await get_tree().process_frame
+    scroll_container.set_deferred("scroll_horizontal", scroll_container.get_h_scroll_bar().max_value)
 
 func _on_delete_stage(stage: Stage) -> void:
     var stage_idx := active_factory.stages.find(stage)

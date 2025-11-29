@@ -7,9 +7,9 @@
 > \- - Completed Task
 > \- b Bug
 
-- b should move stage scrollbox when new stage is created
-
-- ### v0 save game
-- add reset key for testing
-- auto save and load
-- add a quick load for testing (1-5)
+- ### v0 glue stage
+- highlight selection on hover
+- switch to selected color on click
+- highlight selection 2 after click
+- switch to selected 2 color on click
+- detect an show bad glues

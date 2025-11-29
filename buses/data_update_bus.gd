@@ -3,3 +3,5 @@ extends Resource
 @warning_ignore_start("unused_signal")
 
 signal monies_updated(new_value: float)
+signal persist_save()
+signal game_loaded()

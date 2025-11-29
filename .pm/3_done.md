@@ -12,3 +12,4 @@
 - v0 extensible stage action system
 - v0 nudge stage
 - v0 stage propigation
+- v0 save game

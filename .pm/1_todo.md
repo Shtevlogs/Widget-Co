@@ -5,9 +5,3 @@
 > \- \#\#\# Feature
 > \- Task
 
-- ### v0 glue stage
-- highlight selection on hover
-- switch to selected color on click
-- highlight selection 2 after click
-- switch to selected 2 color on click
-- detect an show bad glues

@@ -17,9 +17,9 @@
 - (C) v0 widget group layer
 - (C) v0 nudge stage
 - (C) v0 stage propigation
-- (D) v0 save game
-- (T) v0 slice stage
-- (T) v0 glue stage
+- (C) v0 save game
+- (D) v0 glue stage
+- (-) v0 slice stage
 - (-) v0 widget output display
 - (-) v0 factory production rate
 - (-) v0 purchasable factories
