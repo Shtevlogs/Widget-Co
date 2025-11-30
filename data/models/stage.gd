@@ -9,6 +9,9 @@ extends _DataModel
 @export var location_b : Vector2i
 @export var widget_groups : Array[int]
 @export var highlight_blocks : Array[int]
+@export var highlight_grid_x : int = -1
+@export var highlight_grid_y : int = -1
+@export var highlight_grid_color : int = 1
 
 func _init(data: String = "") -> void:
     widget_groups = WidgetUtils.HIGHLIGHT_BLOCKS.duplicate()
@@ -27,6 +30,9 @@ func stringify() -> String:
     string_data.add_value(str(location_b.y))
     string_data.add_array(widget_groups)
     string_data.add_array(highlight_blocks)
+    string_data.add_value(str(highlight_grid_x))
+    string_data.add_value(str(highlight_grid_y))
+    string_data.add_value(str(highlight_grid_color))
     return string_data.data
 
 func load_from_string(data: String) -> void:
@@ -41,3 +47,6 @@ func load_from_string(data: String) -> void:
     location_b.y = int(string_data.get_value())
     widget_groups = string_data.get_array_i()
     highlight_blocks = string_data.get_array_i()
+    highlight_grid_x = int(string_data.get_value())
+    highlight_grid_y = int(string_data.get_value())
+    highlight_grid_color = int(string_data.get_value())

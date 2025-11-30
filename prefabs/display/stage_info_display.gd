@@ -18,6 +18,9 @@ func _process(_d: float) -> void:
     if !stage: return
     mouse_filter = Control.MOUSE_FILTER_PASS if stage.is_editing else Control.MOUSE_FILTER_IGNORE
     material.set_shader_parameter("blocks", stage.highlight_blocks)
+    material.set_shader_parameter("highlight_gridline_x", stage.highlight_grid_x)
+    material.set_shader_parameter("highlight_gridline_y", stage.highlight_grid_y)
+    material.set_shader_parameter("grid_highlight_color", stage.highlight_grid_color)
 
 func _input(event: InputEvent) -> void:
     if !stage || !stage.is_editing: return

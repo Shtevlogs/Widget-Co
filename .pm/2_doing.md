@@ -7,8 +7,10 @@
 > \- - Completed Task
 > \- b Bug
 
+- - b glueing in reverse seems to explode
+
 - ### v0 slice stage
-- highlight grid line on hover
-- highlight either side of selection on click
-- account for multiple sliced widgets
-- account for the possibility of one widget becoming 3+
+- - highlight grid line on hover
+- - highlight either side of selection on click
+- - account for multiple sliced widgets
+- - account for the possibility of one widget becoming 3+

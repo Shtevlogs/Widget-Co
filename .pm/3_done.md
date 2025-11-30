@@ -13,3 +13,4 @@
 - v0 nudge stage
 - v0 stage propigation
 - v0 save game
+- v0 glue stage

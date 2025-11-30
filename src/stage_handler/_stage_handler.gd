@@ -57,6 +57,9 @@ func unhighlight_all(level : int = HOVER) -> void:
     for i in 400:
         if stage.highlight_blocks[i] <= level:
             stage.highlight_blocks[i] = NONE
+    stage.highlight_grid_x = -1
+    stage.highlight_grid_y = -1
+    stage.highlight_grid_color = HOVER
 
 func unhighlight_specific(level: int) -> void:
     for i in 400:
@@ -77,11 +80,14 @@ func set_highlight_by_widget_group(widget_group: int, highlight_type: int = HOVE
         if stage.widget_groups[i] == widget_group && stage.highlight_blocks[i] < PRIMARY:
             stage.highlight_blocks[i] = highlight_type
 
-func get_widget_group_points(widget_group: int) -> Array[Vector2i]:
+func get_widget_group_points(widget_group: int, widget_groups: Array[int] = []) -> Array[Vector2i]:
     var points : Array[Vector2i] = []
     
+    if widget_groups.is_empty():
+        widget_groups = stage.widget_groups
+    
     for i in 400:
-        if stage.widget_groups[i] == widget_group:
+        if widget_groups[i] == widget_group:
             @warning_ignore("integer_division")
             points.append(Vector2i(i % 20, i / 20))
     
@@ -124,6 +130,12 @@ func shift_widget(widget_w_groups : WidgetWithGroups, location_a_parts : Array[V
         widget_w_groups.widget.blocks[idx] = blocks[i]
         widget_w_groups.groups[idx] = groups[i]
 
+func get_last_widget_group() -> int:
+    var highest := 0
+    for g: int in stage.widget_groups:
+        if g > highest:
+            highest = g
+    return highest
 
 class WidgetWithGroups:
     var widget: Widget

@@ -6,3 +6,6 @@
 shader = ExtResource("1_lwuhq")
 shader_parameter/blocks = PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 shader_parameter/BLOCK_COLORS = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 0.5882353, 0.25, 0.40000004, 1, 0.6862745, 0.77750003, 1, 0.110000014, 0.6117647, 1, 0.13, 0.17350018, 0.80784315, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/highlight_gridline_x = -1
+shader_parameter/highlight_gridline_y = -1
+shader_parameter/grid_thickness = 0.005

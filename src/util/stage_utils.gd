@@ -2,7 +2,7 @@ class_name StageUtils
 
 static var _stage_handlers : Array[GDScript] = [
     Nudge,
-    Glue, #TODO: Replace with slice
+    Slice,
     Glue
 ]
 

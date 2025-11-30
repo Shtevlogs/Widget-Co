@@ -7,7 +7,7 @@ func get_result_widget(widget: Widget, groups: Array[int]) -> _StageHandler.Widg
 
     var a_idx := pos_to_idx(stage.location_a)
     var widget_group_a := stage.widget_groups[a_idx]
-    var b_idx := pos_to_idx(stage.location_a)
+    var b_idx := pos_to_idx(stage.location_b)
     var widget_group_b := stage.widget_groups[b_idx]
     
     if widget_group_a > widget_group_b:
@@ -30,7 +30,7 @@ func get_result_widget(widget: Widget, groups: Array[int]) -> _StageHandler.Widg
                 wwg.groups[i] = widget_group_a
                 changed_one = true
     
-        if changed_one:
+        if !changed_one:
             break
     
     return wwg
